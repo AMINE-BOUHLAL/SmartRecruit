@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/SmartRecruit" vcs="Git" />
   </component>
+=======
+  <component name="VcsDirectoryMappings" defaultProject="true" />
+>>>>>>> 010108694d3ad69904e764a93022e31f961fd041
 </project>
