@@ -15,10 +15,7 @@ public class CondidatDao {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, username, password);
-
             Statement statement = connection.createStatement();
-
-            // Correction de la requête SQL (suppression de la virgule après `cv`)
             String condidat = "CREATE TABLE IF NOT EXISTS condidat (" +
                     "id INT AUTO_INCREMENT PRIMARY KEY, " +
                     "nom VARCHAR(100) NOT NULL, " +
