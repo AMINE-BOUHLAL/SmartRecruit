@@ -58,12 +58,12 @@
 <body>
 <div class="login-container">
     <h1>Welcome </h1>
-    <form>
+    <form action="login" method="post">
         <div class="input-wrapper">
-            <input type="text" placeholder="Username" required>
+            <input type="text" placeholder="email" name="email" required>
         </div>
         <div class="input-wrapper">
-            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Password"  name="password" required>
         </div>
         <button type="submit" class="login-btn">Login</button>
         <button type="button" class="signup-btn">Sign Up</button>

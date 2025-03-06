@@ -12,6 +12,23 @@ public class User {
     private String password;
     private String roles;
 
+
+    public User(String nom, String prenom, String email, String tel, String password, String roles) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.tel = tel;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public User(int id, String email, String password, String roles) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
     public int getId() {
         return id;
     }
