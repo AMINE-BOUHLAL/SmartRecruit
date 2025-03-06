@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 
             // Redirection en fonction du rôle
             if ("recruteur".equals(user.getRoles())) {
-                resp.sendRedirect("index.html");
+                resp.sendRedirect("Acceuil.jsp");
             } else {
                 resp.sendRedirect("login.jsp");
             }
