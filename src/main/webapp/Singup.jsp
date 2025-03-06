@@ -34,6 +34,8 @@
 
         input[type="text"],
         input[type="email"],
+        input[type="tel"],
+        input[type="password"],
         select {
             width: 100%;
             padding: 10px;
@@ -62,15 +64,15 @@
     </style>
 </head>
 <body>
-<form action="/submit" method="POST">
+<form action="create" method="post">
     <h2>Sign Up</h2>
     <div>
 
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <input type="text" id="nom" name="nom" placeholder="Enter your name" required>
     </div>
     <div>
 
-        <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+        <input type="text" id="prenom" name="prenom" placeholder="Enter your surname" required>
     </div>
     <div>
 
@@ -78,7 +80,15 @@
     </div>
     <div>
 
-        <select id="role" name="role" required>
+        <input type="tel" id="tel" name="tel" placeholder="Enter your telephone" required>
+    </div>
+    <div>
+
+        <input type="password" id="passwotd" name="password" placeholder="Enter your password" required>
+    </div>
+    <div>
+
+        <select id="roles" name="roles" required>
             <option value="" disabled selected>Select your role</option>
             <option value="admin">Admin</option>
             <option value="recruteur">Recruteur</option>
