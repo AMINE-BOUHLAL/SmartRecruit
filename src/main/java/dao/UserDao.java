@@ -91,8 +91,8 @@ public class UserDao {
 
 
     // Test de la classe
-//    public static void main(String[] args) {
-//        UserDao userDao = new UserDao();
-//        userDao.createUserTable();
-//    }
+    public static void main(String[] args) {
+        UserDao userDao = new UserDao();
+       userDao.createUserTable();
+    }
 }
