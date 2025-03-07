@@ -66,7 +66,9 @@
             <input type="password" placeholder="Password"  name="password" required>
         </div>
         <button type="submit" class="login-btn">Login</button>
+
        <a href="Singup.jsp"> <button type="button" class="signup-btn" >Sign Up</button></a>
+
     </form>
 </div>
 </body>
