@@ -87,7 +87,7 @@
     <h1>SmartRecruit - Job Portal</h1>
     <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="offers.html">Offers</a>
+        <a href="AddOffer.jsp">Offers</a>
         <a href="logout.html">Log Out</a>
     </div>
 </div>
