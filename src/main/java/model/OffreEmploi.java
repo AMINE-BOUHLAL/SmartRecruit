@@ -8,6 +8,23 @@ public class OffreEmploi {
     private String location;
     private  int experience;
 
+    public OffreEmploi(int idOffre, String titre, String description, String datePublication, String location, int experience) {
+        this.idOffre = idOffre;
+        this.titre = titre;
+        this.description = description;
+        this.datePublication = datePublication;
+        this.location = location;
+        this.experience = experience;
+    }
+
+    public OffreEmploi(String titre, String description, String datePublication, String location, int experience) {
+        this.titre = titre;
+        this.description = description;
+        this.datePublication = datePublication;
+        this.location = location;
+        this.experience = experience;
+    }
+
     public int getIdOffre() {
         return idOffre;
     }

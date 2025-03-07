@@ -1,8 +1,11 @@
 package dao;
 
 import model.OffreEmploi;
+import model.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OffreEmploiDao {
     Connection connection;
@@ -36,13 +39,42 @@ public class OffreEmploiDao {
         String sql = "INSERT INTO offre (titre ,description,datePublication) VALUES (?, ?,?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql);){
             preparedStatement.setString(1,offreEmploi.getTitre());
-            preparedStatement.setString(1,offreEmploi.getTitre());
-            preparedStatement.setString(1,offreEmploi.getTitre());
-
+            preparedStatement.setString(2,offreEmploi.getDescription());
+            preparedStatement.setString(3,offreEmploi.getDatePublication());
+            preparedStatement.setString(4,offreEmploi.getLocation());
+            preparedStatement.setInt(5,offreEmploi.getExperience());
+            preparedStatement.executeQuery();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+    public List<OffreEmploi> getAllOffre() {
+       List<OffreEmploi> listOffre = new ArrayList<>();
+        String sql = "SELECT * FROM offre";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                // Création de l'objet OffreEmploi
+                OffreEmploi offre = new OffreEmploi(
+                        rs.getInt("id"),
+                        rs.getString("titre"),
+                        rs.getString("description"),
+                        rs.getString("datePublication"),
+                        rs.getString("location"),
+                        rs.getInt("expérience")
+                );
+
+                //Ajout de l'offre à la liste
+                listOffre.add(offre);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erreur lors de la récupération des offres", e);
+        }
+
+        return listOffre;
+    }
+
 
 
 
