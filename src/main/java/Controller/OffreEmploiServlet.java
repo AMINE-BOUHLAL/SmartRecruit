@@ -43,7 +43,7 @@ public class OffreEmploiServlet extends HttpServlet {
         String description = request.getParameter("description");
         String datePublication = request.getParameter("datePublication");
         String location = request.getParameter("location");
-        int experience = Integer.parseInt(request.getParameter("experience"));
+        int experience = Integer.parseInt(request.getParameter("expérience"));
         OffreEmploi offreEmploi = new OffreEmploi(titre, description, datePublication, location, experience);
         offreEmploiDao.createOffre(offreEmploi);
         response.sendRedirect(request.getContextPath() + "Acceuil.jsp");//une foit cliquer sur enregiter retourne vers la page login

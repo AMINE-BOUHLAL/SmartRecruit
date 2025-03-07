@@ -64,7 +64,7 @@
     <h2>ADD Offer</h2>
 
     <div>
-        <input type="text" id="title" name="title" placeholder="title" required>
+        <input type="text" id="titre" name="titre" placeholder="title" required>
     </div>
     <div>
         <textarea id="description" name="description" placeholder="description" required></textarea>
@@ -89,7 +89,7 @@
         </select>
     </div>
     <div>
-        <select id="experience" name="experience" required>
+        <select id="expérience" name="expérience" required>
             <option value="" disabled selected>Experience</option>
             <option value="0-1 years">0-1 years</option>
             <option value="1-3 years">1-3 years</option>

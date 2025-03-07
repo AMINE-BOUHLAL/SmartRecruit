@@ -36,8 +36,9 @@ public class OffreEmploiDao {
     }
 
     public void createOffre(OffreEmploi offreEmploi){
-        String sql = "INSERT INTO offre (titre ,description,datePublication) VALUES (?, ?,?)";
+        String sql = "INSERT INTO offre (titre ,description,datePublication,location,expérience) VALUES (?, ?,?,?,?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql);){
+            System.out.println("salm");
             preparedStatement.setString(1,offreEmploi.getTitre());
             preparedStatement.setString(2,offreEmploi.getDescription());
             preparedStatement.setString(3,offreEmploi.getDatePublication());
