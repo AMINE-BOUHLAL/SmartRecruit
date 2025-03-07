@@ -21,7 +21,6 @@ public class UserServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         // permet de récupérer la partie de l'URL spécifique au Servlet
         String action = request.getServletPath();
-
         switch (action) {
             case "/create":
                 createUser(request, response);
@@ -48,7 +47,7 @@ public class UserServlet extends HttpServlet {
 
         User user = new User(nom, prenom, email, tel, password, roles);
         userDao.createUser(user);
-        response.sendRedirect(request.getContextPath() + "/login");
+        response.sendRedirect(request.getContextPath() + "/login");//une foit cliquer sur enregiter retourne vers la page login
 
     }
 }
