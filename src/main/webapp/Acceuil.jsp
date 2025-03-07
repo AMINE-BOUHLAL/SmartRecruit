@@ -74,7 +74,7 @@
 
 <div class="job-list">
     <div class="job-item">
-        <a href="AboutOffer" class="job-title"><h3>Web Developer</h3></a>
+        <a href="AboutOffer.jsp" class="job-title"><h3>Web Developer</h3></a>
         <p>Location: Paris</p>
         <p>Experience: 2-3 years</p>
         <p>Fullstack development using Java and JavaScript</p>
