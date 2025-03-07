@@ -47,7 +47,7 @@ public class UserServlet extends HttpServlet {
 
         User user = new User(nom, prenom, email, tel, password, roles);
         userDao.createUser(user);
-        response.sendRedirect(request.getContextPath() + "/login");
+        response.sendRedirect(request.getContextPath() + "/login");//une foit cliquer sur enregiter retourne vers la page login
 
     }
 }
