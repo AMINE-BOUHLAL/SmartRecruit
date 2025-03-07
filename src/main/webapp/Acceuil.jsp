@@ -14,14 +14,34 @@
         .header {
             background-color: #4CAF50;
             color: white;
-            text-align: center;
-            padding: 20px 0;
+            padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 24px;
+        }
+        .nav-links {
+            display: flex;
+            margin-right: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 16px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
         }
         .job-list {
-            max-height: calc(100vh - 120px);
+            max-height: calc(100vh - 80px);
             overflow-y: scroll;
             padding: 20px;
         }
@@ -32,11 +52,6 @@
             border: 1px solid #ddd;
             border-radius: 12px;
             background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .job-item:hover {
-            transform: scale(1.02);
         }
         .job-title {
             text-decoration: none;
@@ -70,6 +85,11 @@
 <body>
 <div class="header">
     <h1>SmartRecruit - Job Portal</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="offers.html">Offers</a>
+        <a href="logout.html">Log Out</a>
+    </div>
 </div>
 
 <div class="job-list">
