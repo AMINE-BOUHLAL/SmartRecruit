@@ -74,53 +74,13 @@
 
 <div class="job-list">
     <div class="job-item">
-        <a href="job-details-web-developer.html" class="job-title"><h3>Web Developer</h3></a>
+        <a href="AboutOffer" class="job-title"><h3>Web Developer</h3></a>
         <p>Location: Paris</p>
         <p>Experience: 2-3 years</p>
         <p>Fullstack development using Java and JavaScript</p>
     </div>
 
-    <div class="job-item">
-        <a href="job-details-data-analyst.html" class="job-title"><h3>Data Analyst</h3></a>
-        <p>Location: Lyon</p>
-        <p>Experience: Entry Level</p>
-        <p>Statistical analysis and data visualization skills</p>
-    </div>
 
-    <div class="job-item">
-        <a href="job-details-product-manager.html" class="job-title"><h3>Product Manager</h3></a>
-        <p>Location: Remote</p>
-        <p>Experience: 4-5 years</p>
-        <p>Strategic product development and team leadership</p>
-    </div>
-
-    <div class="job-item">
-        <a href="job-details-frontend-developer.html" class="job-title"><h3>Frontend Developer</h3></a>
-        <p>Location: Marseille</p>
-        <p>Experience: 1-2 years</p>
-        <p>React and modern web technologies</p>
-    </div>
-
-    <div class="job-item">
-        <a href="job-details-backend-engineer.html" class="job-title"><h3>Backend Engineer</h3></a>
-        <p>Location: Nice</p>
-        <p>Experience: 3-4 years</p>
-        <p>Microservices architecture and Java expertise</p>
-    </div>
-
-    <div class="job-item">
-        <a href="job-details-devops-specialist.html" class="job-title"><h3>DevOps Specialist</h3></a>
-        <p>Location: Toulouse</p>
-        <p>Experience: 2-3 years</p>
-        <p>Cloud infrastructure and container orchestration</p>
-    </div>
-
-    <div class="job-item">
-        <a href="job-details-ui-ux-designer.html" class="job-title"><h3>UI/UX Designer</h3></a>
-        <p>Location: Bordeaux</p>
-        <p>Experience: 2-3 years</p>
-        <p>User-centered design and prototyping</p>
-    </div>
 </div>
 </body>
 </html>

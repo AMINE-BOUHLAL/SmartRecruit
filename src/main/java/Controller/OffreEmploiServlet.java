@@ -26,8 +26,8 @@ public class OffreEmploiServlet extends HttpServlet {
             case "/create":
                 createOffre(request, response);
                 break;
-            case "update":
-
+            case "/list":
+                listOffres(request, response);
                 break;
             case "delete":
 
@@ -46,7 +46,12 @@ public class OffreEmploiServlet extends HttpServlet {
         int experience = Integer.parseInt(request.getParameter("experience"));
         OffreEmploi offreEmploi = new OffreEmploi(titre, description, datePublication, location, experience);
         offreEmploiDao.createOffre(offreEmploi);
-        response.sendRedirect(request.getContextPath() + "/list");//une foit cliquer sur enregiter retourne vers la page login
+        response.sendRedirect(request.getContextPath() + "Acceuil.jsp");//une foit cliquer sur enregiter retourne vers la page login
 
     }
+    private void listOffres(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("offres", offreEmploiDao.getAllOffre());
+        request.getRequestDispatcher("Acceuil.jsp").forward(request, response);
+    }
+
 }

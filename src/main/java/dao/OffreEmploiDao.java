@@ -57,7 +57,7 @@ public class OffreEmploiDao {
             while (rs.next()) {
                 // Création de l'objet OffreEmploi
                 OffreEmploi offre = new OffreEmploi(
-                        rs.getInt("id"),
+                        rs.getInt("idOffre"),
                         rs.getString("titre"),
                         rs.getString("description"),
                         rs.getString("datePublication"),

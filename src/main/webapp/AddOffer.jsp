@@ -70,7 +70,7 @@
         <textarea id="description" name="description" placeholder="description" required></textarea>
     </div>
     <div>
-        <input type="text" id="applicationDate" name="applicationDate" placeholder="application date D/M/Y" required>
+        <input type="text" id="applicationDate" name="datePublication" placeholder="application date D/M/Y" required>
     </div>
     <div>
         <select id="location" name="location" required>
