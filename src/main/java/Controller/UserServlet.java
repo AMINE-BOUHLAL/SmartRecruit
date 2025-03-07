@@ -21,7 +21,6 @@ public class UserServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         // permet de récupérer la partie de l'URL spécifique au Servlet
         String action = request.getServletPath();
-
         switch (action) {
             case "/create":
                 createUser(request, response);

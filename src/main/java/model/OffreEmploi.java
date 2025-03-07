@@ -5,6 +5,8 @@ public class OffreEmploi {
     private String titre;
     private String description;
     private String datePublication;
+    private String location;
+    private  int experience;
 
     public int getIdOffre() {
         return idOffre;
@@ -36,5 +38,21 @@ public class OffreEmploi {
 
     public void setDatePublication(String datePublication) {
         this.datePublication = datePublication;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 }

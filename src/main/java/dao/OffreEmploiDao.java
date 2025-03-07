@@ -1,8 +1,8 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import model.OffreEmploi;
+
+import java.sql.*;
 
 public class OffreEmploiDao {
     Connection connection;
@@ -18,7 +18,9 @@ public class OffreEmploiDao {
                     "idOffre INT AUTO_INCREMENT PRIMARY KEY, " +
                     "titre VARCHAR(100) NOT NULL, " +
                     "description VARCHAR(100) NOT NULL, " +
-                    "datePublication DATE " +
+                    "datePublication DATE ," +
+                    "location  VARCHAR(100) ," +
+                    "expérience INT " +
                     ");";
 
 
@@ -29,6 +31,29 @@ public class OffreEmploiDao {
             e.printStackTrace();
         }
     }
+
+    public void createOffre(OffreEmploi offreEmploi){
+        String sql = "INSERT INTO offre (titre ,description,datePublication) VALUES (?, ?,?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql);){
+            preparedStatement.setString(1,offreEmploi.getTitre());
+            preparedStatement.setString(1,offreEmploi.getTitre());
+            preparedStatement.setString(1,offreEmploi.getTitre());
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     // Test de la classe
     public static void main(String[] args) {
