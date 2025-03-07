@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Form</title>
+    <title>Candidat Sign Up</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,18 +25,10 @@
             font-size: 26px;
         }
 
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
         input[type="text"],
         input[type="email"],
         input[type="tel"],
-        input[type="password"],
-        select {
+        .custom-file-upload {
             width: 100%;
             padding: 10px;
             margin-bottom: 16px;
@@ -44,57 +36,59 @@
             border-radius: 5px;
             box-sizing: border-box;
             font-size: 15px;
+            display: inline-block;
+            background-color: white;
+            text-align: left;
+            cursor: pointer;
         }
 
-        button {
-            width: 100%;
+        button, .custom-file-upload {
             padding: 12px;
             background-color: #4CAF50;
             color: white;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
             font-weight: bold;
+            text-align: center;
         }
 
-        button:hover {
+        button:hover, .custom-file-upload:hover {
             background-color: #2196F3;
+        }
+
+        /* Hide the default file input */
+        input[type="file"] {
+            display: none;
+        }
+        button {
+            width: 100%;
+            border-radius: 5px;
+            font-size: 15PX;
+
         }
     </style>
 </head>
 <body>
-<form action="create" method="post">
-    <h2>Sign Up</h2>
-    <div>
+<form action="candidat-create" method="post" enctype="multipart/form-data">
+    <h2>CANDIDAT </h2>
 
+    <div>
         <input type="text" id="nom" name="nom" placeholder="Enter your name" required>
     </div>
     <div>
-
-        <input type="text" id="prenom" name="prenom" placeholder="Enter your lastname" required>
+        <input type="text" id="prenom" name="prenom" placeholder="Enter your surname" required>
     </div>
     <div>
-
         <input type="email" id="email" name="email" placeholder="Enter your email" required>
     </div>
     <div>
-
         <input type="tel" id="tel" name="tel" placeholder="Enter your telephone" required>
     </div>
     <div>
+        <label for="cv" class="custom-file-upload">Upload  CV </label>
+        <input type="file" id="cv" name="cv" accept=".pdf, .jpg, .png" required>
+    </div>
 
-        <input type="password" id="passwotd" name="password" placeholder="Enter your password" required>
-    </div>
-    <div>
-        <select id="role" name="role" required>
-            <option value="" disabled selected> role</option>
-            <option value="admin">Admin</option>
-            <option value="recruteur">Recruteur</option>
-            <option value="candidat">Candidat</option>
-        </select>
-    </div>
-    <button type="submit">Sign Up</button>
+    <button type="submit">Postuler</button>
 </form>
 </body>
 </html>
