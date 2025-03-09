@@ -6,6 +6,7 @@ import model.User;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.ObjIntConsumer;
 
 public class OffreEmploiDao {
     Connection connection;
@@ -23,7 +24,7 @@ public class OffreEmploiDao {
                     "description VARCHAR(100) NOT NULL, " +
                     "datePublication DATE ," +
                     "location  VARCHAR(100) ," +
-                    "expérience INT " +
+                    "experience  VARCHAR(100) " +
                     ");";
 
 
@@ -36,56 +37,42 @@ public class OffreEmploiDao {
     }
 
     public void createOffre(OffreEmploi offreEmploi){
-        String sql = "INSERT INTO offre (titre ,description,datePublication,location,expérience) VALUES (?, ?,?,?,?)";
+        String sql = "INSERT INTO offre (titre ,description,datePublication,location,experience ) VALUES (?, ?,?,?,?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql);){
-            System.out.println("salm");
+
             preparedStatement.setString(1,offreEmploi.getTitre());
             preparedStatement.setString(2,offreEmploi.getDescription());
             preparedStatement.setString(3,offreEmploi.getDatePublication());
             preparedStatement.setString(4,offreEmploi.getLocation());
-            preparedStatement.setInt(5,offreEmploi.getExperience());
-            preparedStatement.executeQuery();
+            preparedStatement.setString(5,offreEmploi.getExperience());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
     public List<OffreEmploi> getAllOffre() {
-       List<OffreEmploi> listOffre = new ArrayList<>();
+        List<OffreEmploi> offreEmplois = new ArrayList<>();
         String sql = "SELECT * FROM offre";
-
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
-            ResultSet rs = preparedStatement.executeQuery();
+        System.out.println("Exécution de la requête SQL : " + sql);
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
-                // Création de l'objet OffreEmploi
-                OffreEmploi offre = new OffreEmploi(
-                        rs.getInt("idOffre"),
-                        rs.getString("titre"),
-                        rs.getString("description"),
-                        rs.getString("datePublication"),
-                        rs.getString("location"),
-                        rs.getInt("expérience")
-                );
+                int idOffre = rs.getInt("idOffre");
+                String titre = rs.getString("titre");
+                String description = rs.getString("description");
+                String datePublication = rs.getString("datePublication");
+                String location = rs.getString("location");
+                String experience = rs.getString("experience");
+                System.out.println("Offre récupérée: " + titre);
 
-                //Ajout de l'offre à la liste
-                listOffre.add(offre);
+                offreEmplois.add(new OffreEmploi(idOffre,titre,description,datePublication,location,experience));
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Erreur lors de la récupération des offres", e);
+            e.printStackTrace();
         }
-
-        return listOffre;
+        return offreEmplois;
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
     // Test de la classe

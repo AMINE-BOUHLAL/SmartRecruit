@@ -60,7 +60,7 @@
     </style>
 </head>
 <body>
-<form action="add-offer" method="post">
+<form action="offre" method="post">
     <h2>ADD Offer</h2>
 
     <div>
@@ -70,7 +70,7 @@
         <textarea id="description" name="description" placeholder="description" required></textarea>
     </div>
     <div>
-        <input type="text" id="applicationDate" name="datePublication" placeholder="application date D/M/Y" required>
+        <input type="date" id="applicationDate" name="datePublication" required>
     </div>
     <div>
         <select id="location" name="location" required>
@@ -89,7 +89,7 @@
         </select>
     </div>
     <div>
-        <select id="expérience" name="expérience" required>
+        <select id="experience" name="experience" required>
             <option value="" disabled selected>Experience</option>
             <option value="0-1 years">0-1 years</option>
             <option value="1-3 years">1-3 years</option>

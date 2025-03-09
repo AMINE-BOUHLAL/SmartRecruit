@@ -84,7 +84,7 @@
     </div>
     <div>
 
-        <input type="password" id="passwotd" name="password" placeholder="Enter your password" required>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
     </div>
     <div>
         <select id="role" name="role" required>

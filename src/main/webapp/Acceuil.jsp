@@ -1,3 +1,5 @@
+<%@ page import="model.OffreEmploi" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,41 +68,44 @@
             margin: 5px 0;
             color: #666;
         }
-        /* Custom Scrollbar */
-        .job-list::-webkit-scrollbar {
-            width: 10px;
-        }
-        .job-list::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        .job-list::-webkit-scrollbar-thumb {
-            background: #4CAF50;
-            border-radius: 5px;
-        }
-        .job-list::-webkit-scrollbar-thumb:hover {
-            background: #2196F3;
-        }
     </style>
 </head>
 <body>
 <div class="header">
     <h1>SmartRecruit - Job Portal</h1>
     <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="AddOffer.jsp">Offers</a>
+        <a href="index.jsp">Home</a>
+        <a href="AddOffer.jsp">Add Offer</a>
         <a href="logout.html">Log Out</a>
     </div>
 </div>
 
 <div class="job-list">
+    <%
+        // Vérifier si la liste des offres a été correctement passée à la page
+        List<OffreEmploi> offres = (List<OffreEmploi>) request.getAttribute("listOffre");
+
+        if (offres != null && !offres.isEmpty()) {
+            // Parcourir et afficher chaque offre
+            for (OffreEmploi offre : offres) {
+    %>
     <div class="job-item">
-        <a href="AboutOffer.jsp" class="job-title"><h3>Web Developer</h3></a>
-        <p>Location: Paris</p>
-        <p>Experience: 2-3 years</p>
-        <p>Fullstack development using Java and JavaScript</p>
+        <a href="AboutOffer?id=<%= offre.getIdOffre() %>" class="job-title">
+            <h3><%= offre.getTitre() %></h3>
+        </a>
+        <p>Location: <%= offre.getLocation() %></p>
+        <p>Experience: <%= offre.getExperience() %> ans</p>
+        <p><%= offre.getDescription() %></p>
     </div>
-
-
+    <%
+        }
+    } else {
+    %>
+    <p>Aucune offre d'emploi disponible pour le moment.</p>
+    <%
+        }
+    %>
 </div>
+
 </body>
 </html>

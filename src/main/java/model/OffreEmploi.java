@@ -6,9 +6,9 @@ public class OffreEmploi {
     private String description;
     private String datePublication;
     private String location;
-    private  int experience;
+    private  String experience;
 
-    public OffreEmploi(int idOffre, String titre, String description, String datePublication, String location, int experience) {
+    public OffreEmploi(int idOffre, String titre, String description, String datePublication, String location, String experience) {
         this.idOffre = idOffre;
         this.titre = titre;
         this.description = description;
@@ -17,7 +17,7 @@ public class OffreEmploi {
         this.experience = experience;
     }
 
-    public OffreEmploi(String titre, String description, String datePublication, String location, int experience) {
+    public OffreEmploi(String titre, String description, String datePublication, String location, String experience) {
         this.titre = titre;
         this.description = description;
         this.datePublication = datePublication;
@@ -65,11 +65,11 @@ public class OffreEmploi {
         this.location = location;
     }
 
-    public int getExperience() {
+    public String getExperience() {
         return experience;
     }
 
-    public void setExperience(int experience) {
+    public void setExperience(String experience) {
         this.experience = experience;
     }
 }
